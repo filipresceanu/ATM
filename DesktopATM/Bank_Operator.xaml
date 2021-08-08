@@ -1,0 +1,351 @@
+﻿<Window x:Class="DesktopATM.Bank_Operator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopATM"
+        mc:Ignorable="d"
+        Title="Bank_Operator" Height="500" Width="900" Background="#181735">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="330"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="#0F0F2D" Grid.ColumnSpan="2"
+             >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="68*"/>
+                <ColumnDefinition Width="75*"/>
+                <ColumnDefinition Width="75*"/>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="69*"/>
+                <ColumnDefinition Width="68*"/>
+                <ColumnDefinition Width="92*"/>
+                <ColumnDefinition Width="92*"/>
+                <ColumnDefinition Width="92*"/>
+                <ColumnDefinition Width="92*"/>
+                <ColumnDefinition Width="92*"/>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="92*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="BunnyCo"
+                       Foreground="AliceBlue"
+                       Grid.Column="1"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontFamily="Arial"
+                       FontWeight="Bold" Margin="7,6,7,5" Height="14" Width="54"/>
+
+            <TextBlock Text="Menu"
+                       Foreground="LightGray"
+                       Grid.Column="2"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontFamily="Arial"
+                       FontWeight="Bold" Margin="18,6,18,5" Height="14" Width="32"/>
+
+            <TextBlock Text="Website"
+                       Foreground="LightGray"
+                       Grid.Column="3"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontFamily="Arial"
+                       FontWeight="Bold" Margin="12,6,11,5" Height="14" Width="46"/>
+            <Button Content="Deschide cont"
+                        Foreground="White"
+                        FontSize="10"
+                        FontWeight="Medium"
+                    Margin="69,0,-14,0"
+                    Grid.Column="11"
+                    Grid.ColumnSpan="3" Click="DeschideCont_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Arial"/>
+                        <Setter Property="Background" Value="#FE6584"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Aquamarine"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="75" Height="15"
+                                    CornerRadius="7"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+
+                </Button.Template>
+
+            </Button>
+
+            <Button Content="Afisare clienti"
+                        Foreground="White"
+                        FontSize="10"
+                        FontWeight="Medium"
+                   
+                    Grid.Column="10"
+                    Grid.ColumnSpan="4" Click="AfisareClient_Click" HorizontalAlignment="Left" Width="267">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Arial"/>
+                        <Setter Property="Background" Value="#FF6581FE"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FFE27FFF"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="75" Height="15"
+                                    CornerRadius="7"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+
+                </Button.Template>
+
+            </Button>
+            <Button Content="Inchidere cont"
+                        Foreground="White"
+                        FontSize="10"
+                        FontWeight="Medium"
+                   
+                    Grid.Column="9" Grid.ColumnSpan="3" Click="Inchidere_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Arial"/>
+                        <Setter Property="Background" Value="#FE6584"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Aquamarine"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="75" Height="15"
+                                    CornerRadius="7"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+
+                </Button.Template>
+
+            </Button>
+            <Button Content="Transfer"
+                        Foreground="White"
+                        FontSize="10"
+                        FontWeight="Medium"
+                   
+                    Grid.Column="8"
+                    Grid.ColumnSpan="3" Click="Transfer_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Arial"/>
+                        <Setter Property="Background" Value="#FF6581FE"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Aquamarine"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="75" Height="15"
+                                    CornerRadius="7"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+
+                </Button.Template>
+
+            </Button>
+
+            <Button Content="Extras de cont"
+                        Foreground="White"
+                        FontSize="10"
+                        FontWeight="Medium"
+                    
+                    Grid.Column="7"
+                    Grid.ColumnSpan="3" Click="Extras_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Arial"/>
+                        <Setter Property="Background" Value="#FFFE65D4"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Aquamarine"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="75" Height="15"
+                                    CornerRadius="7"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+
+                </Button.Template>
+
+            </Button>
+
+
+
+        </Grid>
+        <StackPanel Grid.Row="1"
+                    VerticalAlignment="Top"
+                    Margin="30,30,30,0" Height="143">
+
+            <StackPanel>
+
+                <StackPanel Orientation="Horizontal"
+                            Margin="0,0,0,20">
+                    <Image Width="50" Height="50" Source="Images/atm.png"
+                           RenderOptions.BitmapScalingMode="Fant"/>
+                    <TextBlock Text="BunnyCo"
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           VerticalAlignment="Center"
+                           FontFamily="Arial"
+                               Margin="20,0,0,0"/>
+
+                </StackPanel>
+
+                <TextBlock Text="Bank"
+                       Foreground="White"
+                       FontSize="25"
+                       FontFamily="Arial"/>
+                <TextBlock Text="Operator"
+                       Foreground="White"
+                       FontSize="25"
+                       FontFamily="Arial"/>
+
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0,15,0,0">
+
+
+
+            </StackPanel>
+
+        </StackPanel>
+        <TextBox Text="IBAN" FontFamily="Arial" Margin="140,200,5,209" Grid.Row="1" x:Name="txtIban" GotFocus="IBan_GotFocut" FontSize="20" >
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="12"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Button Content="Cauta dupa IBAN" Margin="5,200,220,209" Grid.Row="1" Click="ok_Click" Background="Aquamarine" Style="{StaticResource ResourceKey=ButtonRound}" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.237"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+
+        <Label Content="Suma" Foreground="White" FontSize="25" Height="40" Margin="15,360,190,44" Grid.Row="1"/>
+        <TextBox  x:Name="txtSold" Margin="125,360,10,44" Grid.Row="1" TextWrapping="NoWrap" Background="Aquamarine" FontSize="20" PreviewTextInput="NumberValidationTextBox" >
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="12"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        
+        <Button Content=" Crescatoare" Margin="140,293,10,107" Grid.Row="1" Click="cresc_click" Background="Aquamarine" Style="{StaticResource ResourceKey=ButtonRound}"></Button>
+        <Button Margin="0,293,220,107" Grid.Row="1" Content="Descrescatoare" Click="desc_Click " Style="{StaticResource ResourceKey=ButtonRound}" Background="#FF6581FE"/>
+
+        <Grid Grid.Row="1"
+              Grid.Column="1"
+                  
+              >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <StackPanel>
+                <DataGrid x:Name="datagrid" Margin="0,35,10,10" Height="175" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Nume" Binding="{Binding Nume}"/>
+                        <DataGridTextColumn Header="Prenume" Binding="{Binding Prenume}"/>
+                        <DataGridTextColumn Header="Adresa" Binding="{Binding Adresa}"/>
+                        <DataGridTextColumn Header="CNP" Binding="{Binding CNP}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+            </StackPanel>
+            <Grid Grid.Row="2">
+                <DataGrid x:Name="contdatagrid" Margin="0,10,10,24" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Total Sold" Binding="{Binding TotalSold}"/>
+                        <DataGridTextColumn Header="IBAN" Binding="{Binding IBAN}"/>
+
+                        <DataGridTextColumn Header="Moneda" Binding="{Binding Moneda}"/>
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </Grid>
+
+        </Grid>
+
+
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,236 @@
+﻿<Window x:Class="DesktopATM.OpenAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopATM"
+        mc:Ignorable="d"
+        Title="OpenAccount" Height="500" Width="900" Background="#181735">
+
+    <Grid>
+
+        <Grid.RowDefinitions >
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="#0F0F2D" Grid.ColumnSpan="2"
+              >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="68*"/>
+                <ColumnDefinition Width="68*"/>
+                <ColumnDefinition Width="68*"/>
+                <ColumnDefinition Width="69*"/>
+                <ColumnDefinition Width="69*"/>
+                <ColumnDefinition Width="69*"/>
+                <ColumnDefinition Width="68*"/>
+                <ColumnDefinition Width="69*"/>
+                <ColumnDefinition Width="69*"/>
+                <ColumnDefinition Width="69*"/>
+                <ColumnDefinition Width="69*"/>
+                <ColumnDefinition Width="45*"/>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="92*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="BunnyCo"
+                       Foreground="AliceBlue"
+                       Grid.Column="1"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontFamily="Arial"
+                       FontWeight="Bold" Margin="7,6,7,5" Height="14" Width="54"/>
+
+            <TextBlock Text="Menu"
+                       Foreground="LightGray"
+                       Grid.Column="2"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontFamily="Arial"
+                       FontWeight="Bold" Margin="18,6,18,5" Height="14" Width="32"/>
+
+            <TextBlock Text="Website"
+                       Foreground="LightGray"
+                       Grid.Column="3"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontFamily="Arial"
+                       FontWeight="Bold" Margin="12,6,11,5" Height="14" Width="46"/>
+            <Button Content="Start"
+                        Foreground="White"
+                        FontSize="10"
+                        FontWeight="Medium"
+                    Margin="0,0,10,0"
+                    Grid.Column="12"
+                    Grid.ColumnSpan="2">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Arial"/>
+                        <Setter Property="Background" Value="#FE6584"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Aquamarine"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="75" Height="15"
+                                    CornerRadius="7"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+
+                </Button.Template>
+
+            </Button>
+
+        </Grid>
+        <StackPanel Grid.Row="1"
+                    VerticalAlignment="Center"
+                    Margin="10,20,0,49" Height="375">
+
+            <StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            Margin="0,0,0,20">
+                    <Image Width="50" Height="50" Source="Images/atm.png"
+                           RenderOptions.BitmapScalingMode="Fant"/>
+                    <TextBlock Text="Bank"
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           VerticalAlignment="Center"
+                           FontFamily="Arial"
+                               Margin="20,0,0,0"/>
+
+                </StackPanel>
+
+                <StackPanel Margin="10,10,0,10" HorizontalAlignment="Left" Width="380">
+                    <ComboBox  x:Name="cmbTipCont" Text="Tip Cont Bancar" IsEditable="True" IsReadOnly="True" 
+                               FontFamily="Arial"  FontSize="25" Margin="0,10,55,10" Background="AliceBlue" Height="45" 
+                               VerticalAlignment="Center" SelectionChanged="cmbTipCont_SelectionChanged">
+                        <ComboBoxItem x:Name="txtBasic" Content="Basic"/>
+                        <ComboBoxItem x:Name="txtSilver" Content="Silver"/>
+                        <ComboBoxItem x:Name="txtGold" Content="Gold"/>
+                    </ComboBox>
+
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Left">
+                    <ComboBox x:Name="cmbMoneda" Text="Moneda" IsEditable="True" IsReadOnly="True" FontFamily="Arial" FontSize="25" Margin="10,0,0,0" Background="#FF17A3E4" Width="120" Height="35" SelectionChanged="ComboBox_SelectionChanged" >
+                        <ComboBoxItem x:Name="txtRon" Content="RON"/>
+                        <ComboBoxItem x:Name="txtEuro" Content="EURO"/>
+                    </ComboBox>
+                </StackPanel>
+
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0,5,10,0" Height="60">
+                <Button Content="OK"
+                        Foreground="White"
+                        FontSize="14"
+                        FontWeight="Medium"  Click="Add_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="TextElement.FontFamily" Value="Arial"/>
+                            <Setter Property="Background" Value="#FE6584"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="Aquamarine"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="50" Height="35"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+
+                                </ContentPresenter>
+                            </Border>
+                        </ControlTemplate>
+
+                    </Button.Template>
+
+                </Button>
+
+
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0,15,0,0">
+
+
+
+            </StackPanel>
+
+
+        </StackPanel>
+        <Grid Grid.Column="1"
+              Grid.RowSpan="2"
+              Margin="160,-365,-610,85"
+              Panel.ZIndex="-1">
+            <Grid.RenderTransform>
+                <RotateTransform Angle="50"/>
+            </Grid.RenderTransform>
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="-160,170,-255,-250">
+                <StackPanel>
+                    <Border Width="700"
+                            Height="35"
+                            Background="#3DDDC2"
+                            Margin="150,0,0,0"
+                            CornerRadius="20"/>
+                    <Border Width="700"
+                            Height="35"
+                            Background="#FC6586"
+                            Margin="0,15,0,0"
+                            CornerRadius="20"/>
+                    <Border Width="700"
+                            Height="35"
+                            Background="#383660"
+                            Margin="75,15,0,0"
+                            CornerRadius="20"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <Border Width="700"
+                            Height="35"
+                            Background="#3DDDC2"
+                            Margin="150,0,0,0"
+                            CornerRadius="20"/>
+                    <Border Width="700"
+                            Height="35"
+                            Background="#FC6586"
+                            Margin="0,15,0,0"
+                            CornerRadius="20"/>
+                    <Border Width="700"
+                            Height="35"
+                            Background="#383660"
+                            Margin="75,15,0,0"
+                            CornerRadius="20"/>
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+</Window>
